@@ -1,0 +1,32 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    nginx.ingress.kubernetes.io/enable-access-log: "false"
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "false"
+    nginx.ingress.kubernetes.io/proxy-body-size: 500m
+    nginx.ingress.kubernetes.io/proxy-connect-timeout: 60s
+    nginx.ingress.kubernetes.io/proxy-read-timeout: 60s
+    nginx.ingress.kubernetes.io/server-alias: argocd.sws.by
+    nginx.ingress.kubernetes.io/ssl-passthrough: "true"
+  name: argocd-ing
+  namespace: argocd
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: domen.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: argocd-server
+                port:
+                  number: 80
+status:
+  loadBalancer:
+    ingress:
+    - ip: 0.0.0.0
+    - ip: 0.0.0.0
+    - ip: 0.0.0.0
