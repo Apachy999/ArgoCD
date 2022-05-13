@@ -7,14 +7,14 @@ metadata:
     nginx.ingress.kubernetes.io/proxy-body-size: 500m
     nginx.ingress.kubernetes.io/proxy-connect-timeout: 60s
     nginx.ingress.kubernetes.io/proxy-read-timeout: 60s
-    nginx.ingress.kubernetes.io/server-alias: argocd.sws.by
+    nginx.ingress.kubernetes.io/server-alias: apachy999.github.io
     nginx.ingress.kubernetes.io/ssl-passthrough: "true"
   name: argocd-ing
   namespace: argocd
 spec:
   ingressClassName: nginx
   rules:
-    - host: domen.com
+    - host: apachy999.github.io
       http:
         paths:
           - path: /
