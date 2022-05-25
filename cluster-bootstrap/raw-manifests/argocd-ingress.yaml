@@ -14,7 +14,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-    - host: apachy999.github.io
+    - host: apachy.monster
       http:
         paths:
           - path: /
@@ -27,6 +27,6 @@ spec:
 status:
   loadBalancer:
     ingress:
-    - ip: 0.0.0.0
-    - ip: 0.0.0.0
-    - ip: 0.0.0.0
+    - ip: 10.110.0.3
+    - ip: 10.110.0.4
+    - ip: 10.110.0.5
